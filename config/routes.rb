@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 resources :articles
 
 root 'pages#home'
-get 'blog', to: 'pages#blog'
+get 'Blog', to: 'pages#blog'
 get 'about', to: 'pages#about'
+
+get 'connexion', to: 'users#new'
+resources :users, except: [:new]
+
 end
